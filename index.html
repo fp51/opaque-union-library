@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@iadvize-oss/opaque-union - v1.0.0</title>
-	<meta name="description" content="Documentation for @iadvize-oss/opaque-union - v1.0.0">
+	<title>@fp51/opaque-union - v0.0.0</title>
+	<meta name="description" content="Documentation for @fp51/opaque-union - v0.0.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -22,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@iadvize-oss/opaque-union - v1.0.0</a>
+					<a href="index.html" class="title">@fp51/opaque-union - v0.0.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,12 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>@iadvize-oss/opaque-union - v1.0.0</h1>
+			<h1>@fp51/opaque-union - v0.0.0</h1>
 		</div>
 	</div>
 </header>
@@ -64,189 +58,204 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#iadvize-ossopaque-union-library" id="iadvize-ossopaque-union-library" style="color: inherit; text-decoration: none;">
-					<h1>@iadvize-oss/opaque-union library</h1>
+				<a href="#fp51opaque-union-library" id="fp51opaque-union-library" style="color: inherit; text-decoration: none;">
+					<h1>@fp51/opaque-union library</h1>
 				</a>
-				<p><img src="https://github.com/iadvize/opaque-union-library/workflows/Continuous%20integration/badge.svg" alt="Continuous integration"></p>
+				<p><img src="https://github.com/fp51/opaque-union-library/workflows/Continuous%20integration/badge.svg" alt="Continuous integration"></p>
 				<p>This experimental library provides helpers to create and maintain opaque domain
 				sumtypes in Typescript.</p>
 				<p>Inspired by <a href="https://github.com/sledorze/morphic-ts/">https://github.com/sledorze/morphic-ts/</a> and
-				<a href="https://github.com/iadvize/opaque-type-library/">https://github.com/iadvize/opaque-type-library/</a>.</p>
+				<a href="https://github.com/fp51/opaque-type-library/">https://github.com/fp51/opaque-type-library/</a>.</p>
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h1>Example</h1>
 				</a>
 				<p>Let&#39;s say your app deals with messages: </p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">type</span> $Text = {
-  <span class="hljs-attr">author</span>: <span class="hljs-built_in">string</span>;
-  content: <span class="hljs-built_in">string</span>;
-}
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">$Text</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">author</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">content</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
 
-<span class="hljs-keyword">type</span> $Image = {
-  <span class="hljs-attr">author</span>: <span class="hljs-built_in">string</span>;
-  source: <span class="hljs-built_in">string</span>;
-  description: <span class="hljs-built_in">string</span>;
-  mimetype: <span class="hljs-string">&#x27;jpeg&#x27;</span> | <span class="hljs-string">&#x27;png&#x27;</span>,
-}
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">$Image</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">author</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">source</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">description</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">mimetype</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;jpeg&#039;</span><span style="color: #000000"> | </span><span style="color: #A31515">&#039;png&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">}</span>
 
-<span class="hljs-keyword">type</span> $Video = {
-  <span class="hljs-attr">author</span>: <span class="hljs-built_in">string</span>;
-  source: <span class="hljs-built_in">string</span>;
-  description: <span class="hljs-built_in">string</span>;
-  autoplay: <span class="hljs-built_in">boolean</span>;
-}
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">$Video</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">author</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">source</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">description</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">autoplay</span><span style="color: #000000">: </span><span style="color: #267F99">boolean</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
 
-<span class="hljs-keyword">type</span> $Message = $Text | $Image | $Video;</code></pre>
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">$Message</span><span style="color: #000000"> = </span><span style="color: #267F99">$Text</span><span style="color: #000000"> | </span><span style="color: #267F99">$Image</span><span style="color: #000000"> | </span><span style="color: #267F99">$Video</span><span style="color: #000000">;</span>
+</code></pre>
 				<p>These are your private types (we like to prefix them with <code>$</code>). You don&#39;t want
 					to expose them directly. You want to make them <em>opaque</em> for the rest of your app
 				and expose an API to use them.</p>
 				<p>Let&#39;s create the opaque union helper:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Union <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@iadvize-oss/opaque-union&#x27;</span>;
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fp51/opaque-union&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> MessageAPI = Union.of({
-  <span class="hljs-attr">Text</span>: Union.type&lt;$Text&gt;(),
-  <span class="hljs-attr">Image</span>: Union.type&lt;$Image&gt;(),
-  <span class="hljs-attr">Video</span>: Union.type&lt;$Video&gt;(),
-});
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">MessageAPI</span><span style="color: #000000"> = </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">of</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">Text:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Text</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">  </span><span style="color: #001080">Image:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Image</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">  </span><span style="color: #001080">Video:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Video</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">});</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> Text = ReturnType&lt;<span class="hljs-keyword">typeof</span> MessageAPI.of.Text&gt;; <span class="hljs-comment">// Union.Opaque&lt;&#x27;Text&#x27;&gt;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> Image = ReturnType&lt;<span class="hljs-keyword">typeof</span> MessageAPI.of.Image&gt;;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> Video = ReturnType&lt;<span class="hljs-keyword">typeof</span> MessageAPI.of.Video&gt;;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">Text</span><span style="color: #000000"> = </span><span style="color: #267F99">ReturnType</span><span style="color: #000000">&lt;</span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">&gt;; </span><span style="color: #008000">// Union.Opaque&lt;&#039;Text&#039;&gt;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">Image</span><span style="color: #000000"> = </span><span style="color: #267F99">ReturnType</span><span style="color: #000000">&lt;</span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Image</span><span style="color: #000000">&gt;;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">Video</span><span style="color: #000000"> = </span><span style="color: #267F99">ReturnType</span><span style="color: #000000">&lt;</span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Video</span><span style="color: #000000">&gt;;</span>
 
-<span class="hljs-comment">// this is a union of each opaque type</span>
-<span class="hljs-comment">// ie. Text | Image | Video</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> Message = Union.Type&lt;<span class="hljs-keyword">typeof</span> MessageAPI&gt;;</code></pre>
+<span style="color: #008000">// this is a union of each opaque type</span>
+<span style="color: #008000">// ie. Text | Image | Video</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">Message</span><span style="color: #000000"> = </span><span style="color: #267F99">Union</span><span style="color: #000000">.</span><span style="color: #267F99">Type</span><span style="color: #000000">&lt;</span><span style="color: #0000FF">typeof</span><span style="color: #000000"> </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">&gt;;</span>
+</code></pre>
 				<p>An helper for media messages only will also be helpful.</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Union <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@iadvize-oss/opaque-union&#x27;</span>;
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fp51/opaque-union&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> MediaMessageAPI = Union.omit(MessageAPI, [<span class="hljs-string">&#x27;Text&#x27;</span>]);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">MediaMessageAPI</span><span style="color: #000000"> = </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">omit</span><span style="color: #000000">(</span><span style="color: #001080">MessageAPI</span><span style="color: #000000">, [</span><span style="color: #A31515">&#039;Text&#039;</span><span style="color: #000000">]);</span>
+</code></pre>
 				<p>You can now easily create the API you want your module to expose.</p>
 				<p>First, constructors:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createText = MessageAPI.of.Text; <span class="hljs-comment">// (props: $Text) =&gt; Union.Opaque&lt;&#x27;Text&#x27;&gt;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createImage = MessageAPI.of.Image;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createVideo = MessageAPI.of.Video;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">createText</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">; </span><span style="color: #008000">// (props: $Text) =&gt; Union.Opaque&lt;&#039;Text&#039;&gt;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">createImage</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Image</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">createVideo</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Video</span><span style="color: #000000">;</span>
+
 </code></pre>
 				<p>To be used somewhere else in your app like that:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Message <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/message.ts&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Message</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/message.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> textMessage = Message.createText({ <span class="hljs-comment">// textMessage is opaque</span>
-  <span class="hljs-attr">author</span>: <span class="hljs-string">&#x27;Jean&#x27;</span>,
-  <span class="hljs-attr">content</span>: <span class="hljs-string">&#x27;Hello world!&#x27;</span>,
-});
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">textMessage</span><span style="color: #000000"> = </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">createText</span><span style="color: #000000">({ </span><span style="color: #008000">// textMessage is opaque</span>
+<span style="color: #000000">  </span><span style="color: #001080">author:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Jean&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">content:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Hello world!&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
 
-<span class="hljs-keyword">const</span> imageMessage = Message.createImage({
-  <span class="hljs-attr">author</span>: <span class="hljs-string">&#x27;Peter&#x27;</span>,
-  <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;http://...&#x27;</span>,
-  <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;A goat&#x27;</span>,
-  <span class="hljs-attr">mimetype</span>: <span class="hljs-string">&#x27;jpeg&#x27;</span>,
-});</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">imageMessage</span><span style="color: #000000"> = </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">createImage</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">author:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Peter&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">source:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;http://...&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;A goat&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">mimetype:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;jpeg&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+</code></pre>
 				<p>We can&#39;t work directly on the opaque <code>textMessage</code> or <code>imageMessage</code> variables
 				because we can&#39;t see what&#39;s inside.</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// Error: Property &#x27;author&#x27; does not exist on type &#x27;Opaque&lt;&quot;Text&quot;&gt;&#x27;.</span>
-textMessage.author</code></pre>
+				<pre><code class="language-typescript"><span style="color: #008000">// Error: Property &#039;author&#039; does not exist on type &#039;Opaque&lt;&quot;Text&quot;&gt;&#039;.</span>
+<span style="color: #001080">textMessage</span><span style="color: #000000">.</span><span style="color: #001080">author</span>
+</code></pre>
 				<p>You&#39;re safe. Only <code>MessageAPI</code> knows how to &quot;unopaque&quot; these variables and work
 				on their content. It&#39;s best to keep the API private to your <code>message.ts</code> module.</p>
 				<p>To help you do just that, you can write properties accessors easily:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> author = MessageAPI.lensFromProp(<span class="hljs-string">&#x27;author&#x27;</span>).get;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">author</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;author&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> content = MessageAPI.Text.lensFromProp(<span class="hljs-string">&#x27;content&#x27;</span>).get;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">content</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;content&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> source = MediaMessageAPI.lensFromProp(<span class="hljs-string">&#x27;source&#x27;</span>).get;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">source</span><span style="color: #000000"> = </span><span style="color: #001080">MediaMessageAPI</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;source&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> description = MediaMessageAPI.lensFromProp(<span class="hljs-string">&#x27;description&#x27;</span>).get;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">description</span><span style="color: #000000"> = </span><span style="color: #001080">MediaMessageAPI</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;description&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mimetype = MessageAPI.Image.lensFromProp(<span class="hljs-string">&#x27;mimetype&#x27;</span>).get;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mimetype</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">Image</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;mimetype&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> autoplay = MessageAPI.Video.lensFromProp(<span class="hljs-string">&#x27;autoplay&#x27;</span>).get;</code></pre>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">autoplay</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">Video</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;autoplay&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
+</code></pre>
 				<p>To be used in another file like this: </p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Message <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/message.ts&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Message</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/message.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> textContent = Message.content(textMessage);
-<span class="hljs-keyword">const</span> imageDescription = Message.description(imageMessage);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">textContent</span><span style="color: #000000"> = </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">content</span><span style="color: #000000">(</span><span style="color: #001080">textMessage</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">imageDescription</span><span style="color: #000000"> = </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">description</span><span style="color: #000000">(</span><span style="color: #001080">imageMessage</span><span style="color: #000000">);</span>
+</code></pre>
 				<p>You can create more powerful and time saving compound accessors as well:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> summary = MessageAPI.fold({
-  <span class="hljs-attr">Text</span>: <span class="hljs-function"><span class="hljs-params">text</span> =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${author(text)}</span> send &quot;<span class="hljs-subst">${content(text)}</span>&quot;`</span>,
-  <span class="hljs-attr">Image</span>: <span class="hljs-function"><span class="hljs-params">image</span> =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${author(image)}</span> send a <span class="hljs-subst">${mimetype(image)}</span> image &quot;<span class="hljs-subst">${description(image)}</span>&quot;`</span>,
-  <span class="hljs-attr">Video</span>: <span class="hljs-function"><span class="hljs-params">video</span> =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${author(video)}</span> send a video &quot;<span class="hljs-subst">${description(video)}</span>&quot;`</span>,
-});</code></pre>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">summary</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #795E26">fold</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #795E26">Text</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">text</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #795E26">author</span><span style="color: #000000FF">(</span><span style="color: #001080">text</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515"> send &quot;</span><span style="color: #0000FF">${</span><span style="color: #795E26">content</span><span style="color: #000000FF">(</span><span style="color: #001080">text</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515">&quot;`</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #795E26">Image</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">image</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #795E26">author</span><span style="color: #000000FF">(</span><span style="color: #001080">image</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515"> send a </span><span style="color: #0000FF">${</span><span style="color: #795E26">mimetype</span><span style="color: #000000FF">(</span><span style="color: #001080">image</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515"> image &quot;</span><span style="color: #0000FF">${</span><span style="color: #795E26">description</span><span style="color: #000000FF">(</span><span style="color: #001080">image</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515">&quot;`</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #795E26">Video</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">video</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #795E26">author</span><span style="color: #000000FF">(</span><span style="color: #001080">video</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515"> send a video &quot;</span><span style="color: #0000FF">${</span><span style="color: #795E26">description</span><span style="color: #000000FF">(</span><span style="color: #001080">video</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515">&quot;`</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+</code></pre>
 				<p>To be used for example like that: </p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Message <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/message.ts&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Message</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/message.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log</span>(<span class="hljs-params">message: Message.Message</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(Message.summary(message));
-}</code></pre>
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">message</span><span style="color: #000000">: </span><span style="color: #267F99">Message</span><span style="color: #000000">.</span><span style="color: #267F99">Message</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">summary</span><span style="color: #000000">(</span><span style="color: #001080">message</span><span style="color: #000000">));</span>
+<span style="color: #000000">}</span>
+</code></pre>
 				<p>You can write transformations:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addSignature = <span class="hljs-function">(<span class="hljs-params">signature: <span class="hljs-built_in">string</span></span>) =&gt;</span> MessageAPI.Text.iso.modify(
-  $text =&gt; ({ ...$text, <span class="hljs-attr">content</span>: <span class="hljs-string">`<span class="hljs-subst">${$text.content}</span>\n<span class="hljs-subst">${signature}</span>`</span> })
-);</code></pre>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">addSignature</span><span style="color: #000000"> = (</span><span style="color: #001080">signature</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">.</span><span style="color: #001080">iso</span><span style="color: #000000">.</span><span style="color: #795E26">modify</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">$text</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> ({ ...</span><span style="color: #001080">$text</span><span style="color: #000000">, </span><span style="color: #001080">content:</span><span style="color: #000000"> </span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #001080">$text</span><span style="color: #000000FF">.</span><span style="color: #001080">content</span><span style="color: #0000FF">}</span><span style="color: #EE0000">\n</span><span style="color: #0000FF">${</span><span style="color: #001080">signature</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000"> })</span>
+<span style="color: #000000">);</span>
+</code></pre>
 				<p>It&#39;s very composable. For example here with
 				<a href="https://gcanti.github.io/fp-ts/modules/">fp-ts</a> <code>pipe</code> function:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { pipe } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;fp-ts/es6/function&#x27;</span>;
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Message <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/message.ts&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">pipe</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;fp-ts/es6/function&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Message</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/message.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> signature = <span class="hljs-string">&#x27;Jean (jean@email.com)&#x27;</span>;
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">signature</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;Jean (jean@email.com)&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> textMessageWithSignature = pipe(
-  Message.createText(...),
-  Message.addSignature(signature),
-);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">textMessageWithSignature</span><span style="color: #000000"> = </span><span style="color: #795E26">pipe</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">createText</span><span style="color: #000000">(...),</span>
+<span style="color: #000000">  </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">addSignature</span><span style="color: #000000">(</span><span style="color: #001080">signature</span><span style="color: #000000">),</span>
+<span style="color: #000000">);</span>
+</code></pre>
 				<p>And finally, the classic helpers you&#39;ve come to expect come bundled in:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> isText = MessageAPI.is.Text;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> fold = MessageAPI.fold;</code></pre>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Message <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/message.ts&#x27;</span>;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">isText</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">is</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">fold</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">fold</span><span style="color: #000000">;</span>
+</code></pre>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Message</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/message.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">if</span> (Message.isText(message)) {
-  <span class="hljs-keyword">return</span> &lt;TextMessage message={message}&gt;
-} else {
-  return &lt;UnsupportedMessage &gt;
-}
+<span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">isText</span><span style="color: #000000">(</span><span style="color: #001080">message</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> &lt;</span><span style="color: #267F99">TextMessage</span><span style="color: #000000"> </span><span style="color: #267F99">message</span><span style="color: #000000">={</span><span style="color: #001080">message</span><span style="color: #000000">}&gt;</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> &lt;</span><span style="color: #267F99">UnsupportedMessage</span><span style="color: #000000"> &gt;</span>
+<span style="color: #000000">}</span>
 
-// or
+<span style="color: #008000">// or</span>
 
-return pipe(
-  message,
-  Message.fold({
-    Text: text =&gt; &lt;TextMessage message={text} /&gt;,
-    Image: () =&gt; &lt;UnsupportedMessage /&gt;,
-    Video: () =&gt; &lt;UnsupportedMessage /&gt;,
-  }),
-);</code></pre>
+<span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #795E26">pipe</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">message</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">Message</span><span style="color: #000000">.</span><span style="color: #795E26">fold</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Text</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">text</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> &lt;</span><span style="color: #267F99">TextMessage</span><span style="color: #000000"> </span><span style="color: #267F99">message</span><span style="color: #000000">={</span><span style="color: #001080">text</span><span style="color: #000000">} /&gt;,</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Image</span><span style="color: #001080">:</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> &lt;</span><span style="color: #267F99">UnsupportedMessage</span><span style="color: #000000"> /&gt;,</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Video</span><span style="color: #001080">:</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> &lt;</span><span style="color: #267F99">UnsupportedMessage</span><span style="color: #000000"> /&gt;,</span>
+<span style="color: #000000">  }),</span>
+<span style="color: #000000">);</span>
+</code></pre>
 				<a href="#advanced-example" id="advanced-example" style="color: inherit; text-decoration: none;">
 					<h1>Advanced example</h1>
 				</a>
 				<p>What if a Message should be either <code>Pending</code> or <code>Sent</code>? This is what is called
 				&quot;variation&quot; in the library.</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
+				<pre><code class="language-typescript"><span style="color: #008000">// message.ts</span>
 
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Union <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@iadvize-oss/opaque-union&#x27;</span>;
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fp51/opaque-union&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> MessageAPI = Union.ofVariations({
-  <span class="hljs-attr">Text</span>: {
-    <span class="hljs-attr">Pending</span>: Union.type&lt;$Text&gt;(),
-    <span class="hljs-attr">Sent</span>: Union.type&lt;$Text&gt;(),
-  },
-  <span class="hljs-attr">Image</span>: {
-    <span class="hljs-attr">Pending</span>: Union.type&lt;$Image&gt;(),
-    <span class="hljs-attr">Sent</span>: Union.type&lt;$Image&gt;(),
-  },
-});
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">MessageAPI</span><span style="color: #000000"> = </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">ofVariations</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">Text:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">Pending:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Text</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">    </span><span style="color: #001080">Sent:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Text</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">Image:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">Pending:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Image</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">    </span><span style="color: #001080">Sent:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Image</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">});</span>
 
-<span class="hljs-keyword">const</span> pendingTextMessage = MessageAPI.of.Text.Pending({ ... });</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">pendingTextMessage</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">.</span><span style="color: #795E26">Pending</span><span style="color: #000000">({ ... });</span>
+</code></pre>
 				<p>Using variations, you will be able to model your entities with a table, like
 				below, while still using all the library union helpers.</p>
 				<table>
@@ -271,11 +280,12 @@ return pipe(
 				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 					<h1>Install</h1>
 				</a>
-				<pre><code>npm add @iadvize-oss/opaque-<span class="hljs-class"><span class="hljs-keyword">union</span></span></code></pre>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">add</span><span style="color: #000000"> @</span><span style="color: #001080">fp51</span><span style="color: #000000">/</span><span style="color: #001080">opaque</span><span style="color: #000000">-</span><span style="color: #001080">union</span>
+</code></pre>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h1>Documentation</h1>
 				</a>
-				<p><a href="https://iadvize.github.io/opaque-union-library/">📖 Documentation</a></p>
+				<p><a href="https://fp51.github.io/opaque-union-library/">📖 Documentation</a></p>
 				<a href="#optics" id="optics" style="color: inherit; text-decoration: none;">
 					<h1>Optics</h1>
 				</a>
@@ -285,49 +295,55 @@ return pipe(
 					<h2><code>Iso</code></h2>
 				</a>
 				<p>An <code>Iso</code> is a tool to transform between two types without any loss. In our case:</p>
-				<pre><code>  Opaque&lt;<span class="hljs-keyword">Key</span>&gt; ---&gt; Type (<span class="hljs-keyword">get</span>, <span class="hljs-keyword">from</span>, unwrap)
-  Opaque&lt;<span class="hljs-keyword">Key</span>&gt; &lt;--- Type (reverseGet, <span class="hljs-keyword">to</span>, wrap)</code></pre>
+				<pre><code><span style="color: #000000">  </span><span style="color: #001080">Opaque</span><span style="color: #000000">&lt;</span><span style="color: #001080">Key</span><span style="color: #000000">&gt; ---&gt; </span><span style="color: #795E26">Type</span><span style="color: #000000"> (</span><span style="color: #001080">get</span><span style="color: #000000">, </span><span style="color: #001080">from</span><span style="color: #000000">, </span><span style="color: #001080">unwrap</span><span style="color: #000000">)</span>
+<span style="color: #000000">  </span><span style="color: #001080">Opaque</span><span style="color: #000000">&lt;</span><span style="color: #001080">Key</span><span style="color: #000000">&gt; &lt;--- </span><span style="color: #267F99">Type</span><span style="color: #000000"> (</span><span style="color: #001080">reverseGet</span><span style="color: #000000">, </span><span style="color: #001080">to</span><span style="color: #000000">, </span><span style="color: #001080">wrap</span><span style="color: #000000">)</span>
+</code></pre>
 				<p>It&#39;s particulary useful to transform the private value inside the opaque but you
 					can also combine it with other
 				<a href="https://github.com/gcanti/monocle-ts">monocle-ts</a> optics. </p>
 				<p>Use <code>&lt;API&gt;.&lt;Type&gt;.iso</code> to have full control over one type and its corresponding
 				opaque type.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> iso = MessageAPI.Text.iso; <span class="hljs-comment">// Iso&lt;Opaque&lt;Type&gt;, Type&gt;</span>
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">iso</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">.</span><span style="color: #001080">iso</span><span style="color: #000000">; </span><span style="color: #008000">// Iso&lt;Opaque&lt;Type&gt;, Type&gt;</span>
 
-<span class="hljs-keyword">const</span> fromOpaque: <span class="hljs-function">(<span class="hljs-params">text: Text</span>) =&gt;</span> $Text = iso.from;
-<span class="hljs-keyword">const</span> toOpaque: <span class="hljs-function">(<span class="hljs-params">$text: $Text</span>) =&gt;</span> Text = iso.to;</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">fromOpaque</span><span style="color: #000000">: (</span><span style="color: #001080">text</span><span style="color: #000000">: </span><span style="color: #267F99">Text</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #267F99">$Text</span><span style="color: #000000"> = </span><span style="color: #001080">iso</span><span style="color: #000000">.</span><span style="color: #001080">from</span><span style="color: #000000">;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">toOpaque</span><span style="color: #000000">: (</span><span style="color: #001080">$text</span><span style="color: #000000">: </span><span style="color: #267F99">$Text</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #267F99">Text</span><span style="color: #000000"> = </span><span style="color: #001080">iso</span><span style="color: #000000">.</span><span style="color: #001080">to</span><span style="color: #000000">;</span>
+</code></pre>
 				<p>To be used like this, when you need to &quot;unopaque&quot; your type in a private module
 				function, for example:</p>
-				<pre><code class="language-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">translate</span>(<span class="hljs-params">textMessage: Text</span>): <span class="hljs-title">Text</span> </span>{
-  <span class="hljs-keyword">const</span> privateContent = fromOpaque(
-    textMessage, <span class="hljs-comment">// this is an Opaque&lt;&#x27;Text&#x27;&gt;</span>
-  ); <span class="hljs-comment">// &quot;hello world&quot;</span>
+				<pre><code class="language-typescript"><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">translate</span><span style="color: #000000">(</span><span style="color: #001080">textMessage</span><span style="color: #000000">: </span><span style="color: #267F99">Text</span><span style="color: #000000">): </span><span style="color: #267F99">Text</span><span style="color: #000000"> { </span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">privateContent</span><span style="color: #000000"> = </span><span style="color: #795E26">fromOpaque</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #001080">textMessage</span><span style="color: #000000">, </span><span style="color: #008000">// this is an Opaque&lt;&#039;Text&#039;&gt;</span>
+<span style="color: #000000">  ); </span><span style="color: #008000">// &quot;hello world&quot;</span>
+<span style="color: #000000">    </span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">translation</span><span style="color: #000000"> = </span><span style="color: #795E26">translateText</span><span style="color: #000000">(</span><span style="color: #001080">privateContent</span><span style="color: #000000">); </span><span style="color: #008000">// some magic here</span>
 
-  <span class="hljs-keyword">const</span> translation = translateText(privateContent); <span class="hljs-comment">// some magic here</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">opaqueTextMessageAgain</span><span style="color: #000000"> = </span><span style="color: #795E26">toOpaque</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #001080">translation</span><span style="color: #000000">, </span><span style="color: #008000">// this is a $Text</span>
+<span style="color: #000000">  ); </span><span style="color: #008000">// Opaque&lt;&#039;Text&#039;&gt;</span>
 
-  <span class="hljs-keyword">const</span> opaqueTextMessageAgain = toOpaque(
-    translation, <span class="hljs-comment">// this is a $Text</span>
-  ); <span class="hljs-comment">// Opaque&lt;&#x27;Text&#x27;&gt;</span>
-
-  <span class="hljs-keyword">return</span> opaqueTextMessageAgain
-}</code></pre>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">opaqueTextMessageAgain</span>
+<span style="color: #000000">}</span>
+</code></pre>
 				<p>You can also use the <code>Iso</code> directly for transformations:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> iso = MessageAPI.Text.iso; <span class="hljs-comment">// Iso&lt;Opaque&lt;Type&gt;, Type&gt;</span>
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">iso</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">Text</span><span style="color: #000000">.</span><span style="color: #001080">iso</span><span style="color: #000000">; </span><span style="color: #008000">// Iso&lt;Opaque&lt;Type&gt;, Type&gt;</span>
 
-<span class="hljs-keyword">const</span> addSignature = <span class="hljs-function">(<span class="hljs-params">signature: <span class="hljs-built_in">string</span></span>) =&gt;</span> iso.modify(
-  <span class="hljs-comment">// you have access to the private type here</span>
-  $text =&gt; <span class="hljs-string">`<span class="hljs-subst">${$text}</span>\n<span class="hljs-subst">${signature}</span>`</span>,
-);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">addSignature</span><span style="color: #000000"> = (</span><span style="color: #001080">signature</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">iso</span><span style="color: #000000">.</span><span style="color: #795E26">modify</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #008000">// you have access to the private type here</span>
+<span style="color: #000000">  </span><span style="color: #001080">$text</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #A31515">`</span><span style="color: #0000FF">${</span><span style="color: #001080">$text</span><span style="color: #0000FF">}</span><span style="color: #EE0000">\n</span><span style="color: #0000FF">${</span><span style="color: #001080">signature</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">,</span>
+<span style="color: #000000">);</span>
+</code></pre>
 				<p>To be used like this:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> textMessage: Text = ...;
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">textMessage</span><span style="color: #000000">: </span><span style="color: #267F99">Text</span><span style="color: #000000"> = ...;</span>
 
-<span class="hljs-keyword">const</span> textMessageWithSignature = addSignature(<span class="hljs-string">&#x27;Jean (jean@email.com)&#x27;</span>)(textMessage);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">textMessageWithSignature</span><span style="color: #000000"> = </span><span style="color: #795E26">addSignature</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Jean (jean@email.com)&#039;</span><span style="color: #000000">)(</span><span style="color: #001080">textMessage</span><span style="color: #000000">);</span>
+</code></pre>
 				<p>There is also a global <code>Iso</code> exposed on <code>&lt;API&gt;.iso</code> to switch between any opaque
 				and any private types. </p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> iso: Iso&lt;
-  Message, <span class="hljs-comment">// the opaque union</span>
-  Union.Tagged&lt;$Computer, <span class="hljs-string">&#x27;Computer&#x27;</span>&gt; | Union.Tagged&lt;$Smartphone, <span class="hljs-string">&#x27;Smartphone&#x27;</span>&gt; | Union.Tagged&lt;$Smartphone, <span class="hljs-string">&#x27;Smartphone&#x27;</span>&gt;
-&gt; = MessageAPI.iso;</code></pre>
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">iso</span><span style="color: #000000">: </span><span style="color: #267F99">Iso</span><span style="color: #000000">&lt;</span>
+<span style="color: #000000">  </span><span style="color: #267F99">Message</span><span style="color: #000000">, </span><span style="color: #008000">// the opaque union</span>
+<span style="color: #000000">  </span><span style="color: #267F99">Union</span><span style="color: #000000">.</span><span style="color: #267F99">Tagged</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Computer</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Computer&#039;</span><span style="color: #000000">&gt; | </span><span style="color: #267F99">Union</span><span style="color: #000000">.</span><span style="color: #267F99">Tagged</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Smartphone</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Smartphone&#039;</span><span style="color: #000000">&gt; | </span><span style="color: #267F99">Union</span><span style="color: #000000">.</span><span style="color: #267F99">Tagged</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Smartphone</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Smartphone&#039;</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">&gt; = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">iso</span><span style="color: #000000">;</span>
+</code></pre>
 				<p>Where <code>type Tagged&lt;T, Name&gt; = T &amp; { _key: Name }</code> is used to not lose the type
 					of the entity when switching from an opaque to the corresponding private type.
 					That&#39;s why the global <code>.iso</code> is restricted to members of the union that are
@@ -340,62 +356,99 @@ return pipe(
 				<p>Use the global <code>&lt;API&gt;.lensFromProp</code> to create a <code>Lens</code> between any opaque of the
 				API and a property shared by all private types of the API (if any).</p>
 				<p>In your module:</p>
-				<pre><code class="language-typescript"><span class="hljs-comment">// media.ts</span>
-<span class="hljs-keyword">type</span> $Image = {
-  <span class="hljs-attr">source</span>: <span class="hljs-built_in">string</span>;
-}
+				<pre><code class="language-typescript"><span style="color: #008000">// media.ts</span>
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">$Image</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">source</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
 
-<span class="hljs-keyword">type</span> $Video = {
-  <span class="hljs-attr">source</span>: <span class="hljs-built_in">string</span>;
-  autoplay: <span class="hljs-built_in">boolean</span>;
-}
+<span style="color: #0000FF">type</span><span style="color: #000000"> </span><span style="color: #267F99">$Video</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">source</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">autoplay</span><span style="color: #000000">: </span><span style="color: #267F99">boolean</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
 
-<span class="hljs-keyword">const</span> MediaAPI = Union.of({
-  <span class="hljs-attr">Image</span>: Union.type&lt;$Image&gt;(),
-  <span class="hljs-attr">Video</span>: Union.type&lt;$Video&gt;(),
-});
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">MediaAPI</span><span style="color: #000000"> = </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">of</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">Image:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Image</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">  </span><span style="color: #001080">Video:</span><span style="color: #000000"> </span><span style="color: #001080">Union</span><span style="color: #000000">.</span><span style="color: #795E26">type</span><span style="color: #000000">&lt;</span><span style="color: #267F99">$Video</span><span style="color: #000000">&gt;(),</span>
+<span style="color: #000000">});</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createImage = MessageAPI.of.Image;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createVideo = MessageAPI.of.Video;
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">createImage</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Image</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">createVideo</span><span style="color: #000000"> = </span><span style="color: #001080">MessageAPI</span><span style="color: #000000">.</span><span style="color: #001080">of</span><span style="color: #000000">.</span><span style="color: #001080">Video</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> source = MediaAPI.lensFromProp(<span class="hljs-string">&#x27;source&#x27;</span>).get;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> updateSource = MediaAPI.lensFromProp(<span class="hljs-string">&#x27;source&#x27;</span>).modify;</code></pre>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">source</span><span style="color: #000000"> = </span><span style="color: #001080">MediaAPI</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;source&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">updateSource</span><span style="color: #000000"> = </span><span style="color: #001080">MediaAPI</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;source&#039;</span><span style="color: #000000">).</span><span style="color: #001080">modify</span><span style="color: #000000">;</span>
+</code></pre>
 				<p>Somewhere else in your app:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Media <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/media.ts&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Media</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/media.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> image = Media.createImage({ <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;http://a.com/b.jpeg &#x27;</span> });
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">image</span><span style="color: #000000"> = </span><span style="color: #001080">Media</span><span style="color: #000000">.</span><span style="color: #795E26">createImage</span><span style="color: #000000">({ </span><span style="color: #001080">source:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;http://a.com/b.jpeg &#039;</span><span style="color: #000000"> });</span>
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;source: &#x27;</span>, source(image)); <span class="hljs-comment">// http://a.com/b.jpeg</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;source: &#039;</span><span style="color: #000000">, </span><span style="color: #795E26">source</span><span style="color: #000000">(</span><span style="color: #001080">image</span><span style="color: #000000">)); </span><span style="color: #008000">// http://a.com/b.jpeg</span>
 
-<span class="hljs-keyword">const</span> newImage = Media.updateSource(
-  <span class="hljs-function"><span class="hljs-params">oldSource</span> =&gt;</span> oldSource.replace(<span class="hljs-string">&#x27;a.com&#x27;</span>, <span class="hljs-string">&#x27;static.a.com&#x27;</span>)
-)(image);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">newImage</span><span style="color: #000000"> = </span><span style="color: #001080">Media</span><span style="color: #000000">.</span><span style="color: #795E26">updateSource</span><span style="color: #000000">(</span>
+<span style="color: #000000">  </span><span style="color: #001080">oldSource</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">oldSource</span><span style="color: #000000">.</span><span style="color: #795E26">replace</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a.com&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;static.a.com&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">)(</span><span style="color: #001080">image</span><span style="color: #000000">);</span>
+</code></pre>
 				<p>Use <code>&lt;API&gt;.&lt;Type&gt;.lensFromProp</code> to create an <code>Lens&lt;Opaque&lt;Type&gt;, Type[...]</code>.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> videoMessage: Video = ...;
+				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">videoMessage</span><span style="color: #000000">: </span><span style="color: #267F99">Video</span><span style="color: #000000"> = ...;</span>
 
-<span class="hljs-keyword">const</span> autoplay = MediaAPI.Video.lensFromProp(<span class="hljs-string">&#x27;autoplay&#x27;</span>).get;
-<span class="hljs-keyword">const</span> removeAutoPlay = MediaAPI.Video.lensFromProp(<span class="hljs-string">&#x27;autoplay&#x27;</span>).set(<span class="hljs-literal">false</span>);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">autoplay</span><span style="color: #000000"> = </span><span style="color: #001080">MediaAPI</span><span style="color: #000000">.</span><span style="color: #001080">Video</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;autoplay&#039;</span><span style="color: #000000">).</span><span style="color: #001080">get</span><span style="color: #000000">;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">removeAutoPlay</span><span style="color: #000000"> = </span><span style="color: #001080">MediaAPI</span><span style="color: #000000">.</span><span style="color: #001080">Video</span><span style="color: #000000">.</span><span style="color: #795E26">lensFromProp</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;autoplay&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">set</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">);</span>
+</code></pre>
 				<p>Somewhere else in your app:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Media <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/media.ts&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">Media</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./path/to/media.ts&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> video = Media.createImage({ <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;http://a.com/b.jpeg &#x27;</span>, <span class="hljs-attr">autoplay</span>: <span class="hljs-literal">true</span> });
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">video</span><span style="color: #000000"> = </span><span style="color: #001080">Media</span><span style="color: #000000">.</span><span style="color: #795E26">createImage</span><span style="color: #000000">({ </span><span style="color: #001080">source:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;http://a.com/b.jpeg &#039;</span><span style="color: #000000">, </span><span style="color: #001080">autoplay:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000"> });</span>
 
-<span class="hljs-keyword">const</span> videoWithoutAutoplay = Media.removeAutoPlay(video);</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">videoWithoutAutoplay</span><span style="color: #000000"> = </span><span style="color: #001080">Media</span><span style="color: #000000">.</span><span style="color: #795E26">removeAutoPlay</span><span style="color: #000000">(</span><span style="color: #001080">video</span><span style="color: #000000">);</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_src_index_.html">&quot;src/index&quot;</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#opaque" class="tsd-kind-icon">Opaque</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#opaques" class="tsd-kind-icon">Opaques</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#tagged" class="tsd-kind-icon">Tagged</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#type" class="tsd-kind-icon">Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#unionapidef" class="tsd-kind-icon">UnionAPIDef</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#merge" class="tsd-kind-icon">merge</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#of" class="tsd-kind-icon">of</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#ofvariations" class="tsd-kind-icon">of<wbr>Variations</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#omit" class="tsd-kind-icon">omit</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#omitvariations" class="tsd-kind-icon">omit<wbr>Variations</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#pick" class="tsd-kind-icon">pick</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#type" class="tsd-kind-icon">type</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -405,11 +458,6 @@ return pipe(
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
