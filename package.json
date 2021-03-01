@@ -1,6 +1,6 @@
 {
   "name": "@fp51/opaque-union",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Functional opaque union api for Typescript and Javascript",
   "main": "dist/index.js",
   "module": "esm/index.js",
