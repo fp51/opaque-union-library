@@ -1,12 +1,12 @@
-@iadvize-oss/opaque-union library
+@fp51/opaque-union library
 =============================
-![Continuous integration](https://github.com/iadvize/opaque-union-library/workflows/Continuous%20integration/badge.svg)
+![Continuous integration](https://github.com/fp51/opaque-union-library/workflows/Continuous%20integration/badge.svg)
 
 This experimental library provides helpers to create and maintain opaque domain
 sumtypes in Typescript.
 
 Inspired by https://github.com/sledorze/morphic-ts/ and
-https://github.com/iadvize/opaque-type-library/.
+https://github.com/fp51/opaque-type-library/.
 
 # Example
 
@@ -46,7 +46,7 @@ Let's create the opaque union helper:
 ```typescript
 // message.ts
 
-import * as Union from '@iadvize-oss/opaque-union';
+import * as Union from '@fp51/opaque-union';
 
 const MessageAPI = Union.of({
   Text: Union.type<$Text>(),
@@ -68,7 +68,7 @@ An helper for media messages only will also be helpful.
 ```typescript
 // message.ts
 
-import * as Union from '@iadvize-oss/opaque-union';
+import * as Union from '@fp51/opaque-union';
 
 const MediaMessageAPI = Union.omit(MessageAPI, ['Text']);
 ```
@@ -227,7 +227,7 @@ What if a Message should be either `Pending` or `Sent`? This is what is called
 ```typescript
 // message.ts
 
-import * as Union from '@iadvize-oss/opaque-union';
+import * as Union from '@fp51/opaque-union';
 
 const MessageAPI = Union.ofVariations({
   Text: {
@@ -255,12 +255,12 @@ below, while still using all the library union helpers.
 # Install
 
 ```
-npm add @iadvize-oss/opaque-union
+npm add @fp51/opaque-union
 ```
 
 # Documentation
 
-[📖 Documentation](https://iadvize.github.io/opaque-union-library/)
+[📖 Documentation](https://fp51.github.io/opaque-union-library/)
 
 # Optics
 
