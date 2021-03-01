@@ -1,6 +1,6 @@
 import { Lens, Iso } from 'monocle-ts';
 
-import { createFoldObject } from '@iadvize-oss/foldable-helpers';
+import { createFoldObject } from '@fp51/foldable-helpers';
 
 /**
  * All opaque variables you create with the library will have the type of
